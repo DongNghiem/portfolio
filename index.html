@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dong Nghiem Van | Growth & Analytics Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --text: #1a1a1a;
+  --text-secondary: #5a5a5a;
+  --accent: #2563EB;
+  --accent-light: #EFF6FF;
+  --accent-dark: #1E40AF;
+  --border: #E5E5E0;
+  --tag-bg: #F3F4F6;
+  --result-bg: #F0FDF4;
+  --result-border: #86EFAC;
+  --result-text: #166534;
+  --diagram-bg: #F8FAFC;
+  --diagram-border: #CBD5E1;
+  --diagram-node: #FFFFFF;
+  --diagram-arrow: #94A3B8;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.08);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; line-height: 1.3; }
+
+/* ---- HERO ---- */
+.hero {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+}
+
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.hero-intro {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.hero-contact a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.hero-contact a:hover { border-color: var(--accent); }
+
+/* ---- NAV ---- */
+.project-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+.project-nav-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.project-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.project-nav-item:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.project-nav-num {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-light);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---- CASE STUDY ---- */
+.case-study {
+  max-width: 800px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.case-study-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.case-study-header {
+  padding: 40px 40px 0;
+}
+
+.case-study-num {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.case-study-header h2 {
+  font-size: clamp(22px, 3.5vw, 28px);
+  margin-bottom: 8px;
+}
+
+.case-study-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  background: var(--tag-bg);
+  border-radius: 100px;
+  color: var(--text-secondary);
+}
+
+.case-study-body {
+  padding: 0 40px 40px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 28px 0 10px;
+}
+
+.section-label:first-child { margin-top: 0; }
+
+.case-study-body p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+/* Result box */
+.result-box {
+  background: var(--result-bg);
+  border: 1px solid var(--result-border);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.result-box .result-number {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--result-text);
+  line-height: 1.2;
+}
+
+.result-box .result-label {
+  font-size: 14px;
+  color: var(--result-text);
+  opacity: 0.8;
+}
+
+.result-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.result-row .result-box { flex: 1; min-width: 160px; }
+
+/* ---- DIAGRAM ---- */
+.diagram-container {
+  background: var(--diagram-bg);
+  border: 1px solid var(--diagram-border);
+  border-radius: var(--radius-sm);
+  padding: 32px 24px;
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+.diagram-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--diagram-arrow);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Flow diagram */
+.flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.flow-node {
+  background: var(--diagram-node);
+  border: 1px solid var(--diagram-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 100px;
+  box-shadow: var(--shadow-sm);
+}
+
+.flow-node.highlight {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--accent-dark);
+}
+
+.flow-arrow {
+  color: var(--diagram-arrow);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Vertical flow */
+.flow-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.flow-vertical .flow-arrow { transform: rotate(90deg); }
+
+/* Comparison diagram */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.compare-col {
+  background: var(--diagram-node);
+  border: 1px solid var(--diagram-border);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+}
+
+.compare-col.problem { border-color: #FCA5A5; background: #FEF2F2; }
+.compare-col.solution { border-color: #86EFAC; background: #F0FDF4; }
+
+.compare-col h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.compare-col.problem h4 { color: #DC2626; }
+.compare-col.solution h4 { color: #166534; }
+
+.compare-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.compare-col li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.compare-col.problem li::before { content: "✕"; position: absolute; left: 0; color: #EF4444; font-size: 11px; }
+.compare-col.solution li::before { content: "✓"; position: absolute; left: 0; color: #22C55E; font-weight: 700; font-size: 11px; }
+
+/* ---- FOOTER ---- */
+.footer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+  .hero { padding: 48px 20px 40px; }
+  .case-study-header, .case-study-body { padding-left: 24px; padding-right: 24px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .flow { flex-direction: column; }
+  .flow-arrow { transform: rotate(90deg); }
+  .result-row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Portfolio</div>
+  <h1>Dong Nghiem Van</h1>
+  <p class="hero-intro">Growth marketer and analytics specialist with 5+ years of experience in B2B and SaaS. I turn data into decisions, and decisions into measurable results.</p>
+  <div class="hero-contact">
+    <span>Hanoi, Vietnam</span>
+    <span>·</span>
+    <a href="mailto:nghiemdong0016@gmail.com">nghiemdong0016@gmail.com</a>
+    <span>·</span>
+    <a href="https://www.linkedin.com/in/dong-nghiem-627826180/">LinkedIn</a>
+    <span>·</span>
+    <a href="https://github.com/DongNghiem">GitHub</a>
+  </div>
+</section>
+
+<!-- PROJECT NAV -->
+<nav class="project-nav">
+  <div class="project-nav-label">Case Studies</div>
+  <div class="project-nav-list">
+    <a href="#project-1" class="project-nav-item">
+      <span class="project-nav-num">1</span>
+      Homepage CRO: +28% Free Trial Starts Through Data-Led Redesign
+    </a>
+    <a href="#project-2" class="project-nav-item">
+      <span class="project-nav-num">2</span>
+      $100K Pipeline at Zero Tool Cost via AI-Powered Outreach
+    </a>
+    <a href="#project-3" class="project-nav-item">
+      <span class="project-nav-num">3</span>
+      Building a Measurement Foundation: 100+ Custom Events Across 5 Websites
+    </a>
+    <a href="#project-4" class="project-nav-item">
+      <span class="project-nav-num">4</span>
+      App Store Listing Optimization: +11% Conversion via Pricing Simplification
+    </a>
+  </div>
+</nav>
+
+<!-- ==================== PROJECT 1 ==================== -->
+<section class="case-study" id="project-1">
+  <div class="case-study-card">
+    <div class="case-study-header">
+      <div class="case-study-num">Project 01</div>
+      <h2>Homepage CRO: +28% Free Trial Starts Through Data-Led Redesign</h2>
+      <div class="case-study-meta">PageFly (Shopify SaaS) · CRO Team Lead · 1 Month</div>
+      <div class="tags">
+        <span class="tag">GA4</span>
+        <span class="tag">Funnel Analysis</span>
+        <span class="tag">A/B Testing</span>
+        <span class="tag">CRO</span>
+        <span class="tag">User Behavior</span>
+      </div>
+    </div>
+    <div class="case-study-body">
+      <div class="section-label">The Problem</div>
+      <p>PageFly's homepage was underperforming as a conversion driver for free trial signups. The marketing team had invested in content and design below the fold, but nobody had validated whether users were actually engaging with it.</p>
+
+      <div class="section-label">Discovery</div>
+      <p>On my own initiative, I analyzed user behavior data in GA4 using event tracking and path exploration. The data revealed a clear pattern: both new and returning visitors were navigating directly to the templates page, completely bypassing the homepage content below the fold. The homepage was essentially invisible after the first screen.</p>
+      <p>The existing templates section on the homepage showed only a single graphic with a button linking to the templates page. Users were ignoring it entirely and finding their own way to templates through navigation.</p>
+
+      <!-- Diagram: Before vs After -->
+      <div class="diagram-container">
+        <div class="diagram-title">Before vs. After: User Journey</div>
+        <div class="compare-grid">
+          <div class="compare-col problem">
+            <h4>Before</h4>
+            <ul>
+              <li>Homepage loads with content below the fold</li>
+              <li>Templates section shows 1 static graphic + button</li>
+              <li>Users skip straight to Templates page via nav</li>
+              <li>Homepage content gets zero engagement</li>
+              <li>Extra click adds friction to trial signup</li>
+            </ul>
+          </div>
+          <div class="compare-col solution">
+            <h4>After</h4>
+            <ul>
+              <li>Templates surfaced as browsable cards on homepage</li>
+              <li>Slideshow format lets users explore without leaving</li>
+              <li>Reduces friction: discover + act in one page</li>
+              <li>Homepage becomes a conversion asset</li>
+              <li>Direct path from browse to free trial</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">The Change</div>
+      <p>Rather than recommending a costly full redesign, I proposed one targeted change: replace the static templates graphic with browsable template cards in a slideshow format. This let users explore templates directly from the homepage without an extra navigation step.</p>
+
+      <div class="section-label">Validation</div>
+      <p>The change was A/B tested for one week to confirm impact before full rollout.</p>
+
+      <div class="section-label">Result</div>
+      <div class="result-box">
+        <div class="result-number">+28%</div>
+        <div class="result-label">Increase in free trial starts from homepage</div>
+      </div>
+
+      <div class="section-label">Why It Mattered</div>
+      <p>This project demonstrates that impactful CRO does not always require large-scale redesigns. A single, data-informed change to content presentation, discovered through self-initiated analysis, delivered a significant lift in the primary business metric.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROJECT 2 ==================== -->
+<section class="case-study" id="project-2">
+  <div class="case-study-card">
+    <div class="case-study-header">
+      <div class="case-study-num">Project 02</div>
+      <h2>$100K Pipeline at Zero Tool Cost via AI-Powered Outreach</h2>
+      <div class="case-study-meta">B2B Manufacturer (Magnetic Components) · Growth Freelancer · 3 Months</div>
+      <div class="tags">
+        <span class="tag">HubSpot</span>
+        <span class="tag">Python</span>
+        <span class="tag">Claude AI</span>
+        <span class="tag">Selenium</span>
+        <span class="tag">Email Outreach</span>
+        <span class="tag">Demand Generation</span>
+      </div>
+    </div>
+    <div class="case-study-body">
+      <div class="section-label">The Problem</div>
+      <p>The company had 1,300 accounts sitting in HubSpot with no active engagement strategy. Sales had no systematic way to identify which dormant accounts were worth reactivating, and there was zero budget for new tools or paid acquisition.</p>
+
+      <div class="section-label">My Approach</div>
+      <p>I built a demand generation engine from scratch using AI and existing tools, spending nothing on software. The process combined data analysis, automated research, and personalized content generation.</p>
+
+      <!-- Diagram: Process flow -->
+      <div class="diagram-container">
+        <div class="diagram-title">AI-Powered Outreach Pipeline</div>
+        <div class="flow-vertical">
+          <div class="flow-node">Export 1,300 accounts from HubSpot</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node">Analyze data with Python (engagement scoring, purchase history)</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node">Validate emails via FindyMail</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node highlight">Claude Code + Selenium: automated company research + LinkedIn profile fetching</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node">Identify job titles, create role-based groups</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node highlight">Claude AI: generate personalized content per role + past purchase data</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node">Launch targeted outreach via Mailchimp + HubSpot</div>
+        </div>
+      </div>
+
+      <div class="section-label">Key Decisions</div>
+      <p>The most critical insight was that past engagement was the strongest signal for reactivation. I tested multiple scoring frameworks, but engagement history outperformed all other criteria. Companies that had previously interacted with sales or content were far more likely to respond than those segmented by industry or company size alone.</p>
+      <p>Content personalization was layered: each outreach was tailored by role group and further customized with references to the company's most recent purchase, making every message feel relevant rather than generic.</p>
+
+      <div class="section-label">Results</div>
+      <div class="result-row">
+        <div class="result-box">
+          <div class="result-number">$100K</div>
+          <div class="result-label">Pipeline generated in 3 months</div>
+        </div>
+        <div class="result-box">
+          <div class="result-number">6 MQLs</div>
+          <div class="result-label">From 400 reactivated contacts</div>
+        </div>
+        <div class="result-box">
+          <div class="result-number">$0</div>
+          <div class="result-label">Tool cost</div>
+        </div>
+      </div>
+      <p style="margin-top: 16px;">First MQL arrived within 3 weeks of launch. The LinkedIn channel also grew to 15K+ monthly organic impressions and email campaigns achieved a 32% open rate with 11% CTR.</p>
+
+      <div class="section-label">Why It Mattered</div>
+      <p>This project shows how AI can be integrated into real marketing workflows (not just content generation) to produce measurable pipeline results. The entire system was built with zero paid tools, proving that resourcefulness and analytical thinking can substitute for budget.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROJECT 3 ==================== -->
+<section class="case-study" id="project-3">
+  <div class="case-study-card">
+    <div class="case-study-header">
+      <div class="case-study-num">Project 03</div>
+      <h2>Building a Measurement Foundation: 100+ Custom Events Across 5 Websites</h2>
+      <div class="case-study-meta">PageFly (Shopify SaaS) · CRO Team Lead · Ongoing (2022-2024)</div>
+      <div class="tags">
+        <span class="tag">GA4</span>
+        <span class="tag">GTM</span>
+        <span class="tag">Shopify API</span>
+        <span class="tag">Cross-Domain Tracking</span>
+        <span class="tag">Looker Studio</span>
+        <span class="tag">BigQuery</span>
+      </div>
+    </div>
+    <div class="case-study-body">
+      <div class="section-label">The Problem</div>
+      <p>PageFly operated 5 websites, with two being critical: the main marketing site (pagefly.io) and the Shopify App Store listing. Teams could never tell the full customer journey or attribute conversions accurately across these properties. On top of that, many in-app events were tracked incorrectly, giving teams misleading data to make decisions on.</p>
+
+      <div class="section-label">Challenge 1: Fixing Broken Event Tracking</div>
+      <p>A critical example: the "shopify_app_install" event. Before my involvement, this event was triggered by a button click. But clicking "Install" only started the registration process. Users could drop off at any point during registration, meaning the install count was inflated and unreliable.</p>
+      <p>I rebuilt this event using the Shopify API to fire only after a confirmed installation, giving PageFly its first accurate measurement of real app installs.</p>
+
+      <!-- Diagram: Event fix -->
+      <div class="diagram-container">
+        <div class="diagram-title">Example: Fixing the App Install Event</div>
+        <div class="compare-grid">
+          <div class="compare-col problem">
+            <h4>Before (Inaccurate)</h4>
+            <ul>
+              <li>Event fires on "Install" button click</li>
+              <li>User still has to complete registration</li>
+              <li>Drop-offs after click are counted as installs</li>
+              <li>Install numbers are inflated</li>
+            </ul>
+          </div>
+          <div class="compare-col solution">
+            <h4>After (Accurate)</h4>
+            <ul>
+              <li>Event fires via Shopify API confirmation</li>
+              <li>Only completed registrations are counted</li>
+              <li>First time real install data was available</li>
+              <li>Teams can trust the metric for decisions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Challenge 2: Misaligned In-App Events</div>
+      <p>Another case: the "applied_template" event. It was triggered when users clicked the "Select Template" button. But users could abandon the process after clicking. Additionally, when users created a new page and selected a template from the creation flow, no event fired at all. I detected both gaps and redesigned the event logic to capture actual template application across all paths.</p>
+
+      <div class="section-label">Challenge 3: Cross-Domain Attribution</div>
+      <p>With 5 websites and no unified tracking, teams had no visibility into how users moved between properties. A visitor might discover PageFly through the marketing site, evaluate it on the App Store, and convert inside the app, but none of these touchpoints were connected.</p>
+      <p>I built a cross-domain tracking system that stitched the user journey across pagefly.io and the App Store listing, enabling accurate attribution for the first time.</p>
+
+      <!-- Diagram: Architecture -->
+      <div class="diagram-container">
+        <div class="diagram-title">Cross-Domain Tracking Architecture</div>
+        <div class="flow">
+          <div class="flow-node">Marketing Site<br><small style="color:var(--text-secondary)">pagefly.io</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node">App Store<br><small style="color:var(--text-secondary)">Shopify Listing</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node">In-App Events<br><small style="color:var(--text-secondary)">PageFly Builder</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node highlight">Unified View<br><small style="color:var(--accent-dark)">BigQuery + Looker Studio</small></div>
+        </div>
+      </div>
+
+      <div class="section-label">Scaling Knowledge</div>
+      <p>I created two support systems for the broader team. For ad-hoc analysis, I wrote a comprehensive guide covering event models, attribution logic, how to create custom reports, and which report types to trust. Teams used this to self-serve. For high-impact, non-ad-hoc data tasks (like the event redesigns above), I initiated and executed them directly.</p>
+
+      <div class="section-label">Results</div>
+      <div class="result-row">
+        <div class="result-box">
+          <div class="result-number">100+</div>
+          <div class="result-label">Custom events designed and deployed</div>
+        </div>
+        <div class="result-box">
+          <div class="result-number">5</div>
+          <div class="result-label">Websites unified under one tracking system</div>
+        </div>
+        <div class="result-box">
+          <div class="result-number">15+</div>
+          <div class="result-label">Stakeholders served with dashboards and reporting</div>
+        </div>
+      </div>
+
+      <div class="section-label">Why It Mattered</div>
+      <p>Accurate measurement is the foundation everything else is built on. Before this work, teams were making decisions on flawed data. Afterward, they had trustworthy metrics, connected user journeys, and self-serve reporting. Every other optimization (A/B tests, campaign decisions, budget allocation) became more reliable because the data underneath was finally correct.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROJECT 4 ==================== -->
+<section class="case-study" id="project-4">
+  <div class="case-study-card">
+    <div class="case-study-header">
+      <div class="case-study-num">Project 04</div>
+      <h2>App Store Listing Optimization: +11% Conversion via Pricing Simplification</h2>
+      <div class="case-study-meta">PageFly (Shopify SaaS) · CRO Team Lead · 2 Weeks</div>
+      <div class="tags">
+        <span class="tag">A/B Testing</span>
+        <span class="tag">App Store Optimization</span>
+        <span class="tag">Pricing Strategy</span>
+        <span class="tag">CRO</span>
+      </div>
+    </div>
+    <div class="case-study-body">
+      <div class="section-label">The Problem</div>
+      <p>PageFly's Shopify App Store listing displayed multiple pricing tiers: Free, Silver, Gold, and more. This is standard practice for SaaS apps, but I hypothesized that the complexity of multiple plans was creating friction and decision paralysis for potential users who just wanted to try the product.</p>
+
+      <div class="section-label">The Hypothesis</div>
+      <p>Simplifying the listing to show a single "Free to install" pricing option would reduce cognitive load and increase the install conversion rate. Users would be more likely to try the app if they did not have to evaluate and compare plans before committing.</p>
+
+      <!-- Diagram: Before vs After -->
+      <div class="diagram-container">
+        <div class="diagram-title">Pricing Display: Before vs. After</div>
+        <div class="compare-grid">
+          <div class="compare-col problem">
+            <h4>Before (Multiple Plans)</h4>
+            <ul>
+              <li>Free, Silver, Gold tiers displayed</li>
+              <li>Users must compare features and pricing</li>
+              <li>Decision paralysis before trying the app</li>
+              <li>"Which plan do I need?" becomes a barrier</li>
+            </ul>
+          </div>
+          <div class="compare-col solution">
+            <h4>After (Single Entry Point)</h4>
+            <ul>
+              <li>One option: "Free to install"</li>
+              <li>Zero comparison needed</li>
+              <li>Lower barrier to first action</li>
+              <li>Upsell happens inside the app experience</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Testing Approach</div>
+      <p>The test ran for 2 weeks in February, deliberately chosen to avoid seasonal events (holidays, major sales) that could skew results. This ensured the data reflected genuine behavioral change rather than external factors.</p>
+
+      <div class="section-label">Result</div>
+      <div class="result-box">
+        <div class="result-number">+11.04%</div>
+        <div class="result-label">Increase in App Store listing conversion rate</div>
+      </div>
+
+      <div class="section-label">Why It Mattered</div>
+      <p>This test validated a counterintuitive idea: showing less information can drive more action. In the Shopify App Store where users are browsing dozens of options, reducing friction at the point of decision made a measurable difference. The insight also informed broader product positioning, shifting the team's thinking toward "get users in first, upgrade later" as a conversion strategy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Want to work together? Reach out at <a href="mailto:nghiemdong0016@gmail.com">nghiemdong0016@gmail.com</a></p>
+  <p style="font-size: 12px; color: #999; margin-top: 8px;">Portfolio of Dong Nghiem Van · 2026</p>
+</footer>
+
+</body>
+</html>
